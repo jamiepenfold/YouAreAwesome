@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var messageString = ""
+    @State private var messageString = "Namaste"
     var body: some View {
-        GeometryReader {geometry in
             VStack{
                 Spacer()
+                
                 Text(messageString)
                     .font(.largeTitle)
                     .fontWeight(.heavy)
@@ -21,19 +21,10 @@ struct ContentView: View {
                     .foregroundColor(.red)
                     .frame(height: 150)
                     .frame(maxWidth: .infinity)
-                //                    .border(.orange, width: 1)
                     .padding()
+                    
                 
                 Spacer()
-                
-                Divider()
-                    .background(.black)
-                    .padding()
-                    .frame(width: 150.0)
-                
-                Rectangle()
-                    .fill(.indigo)
-                    .frame(width: geometry.size.width * (2/3) , height: 1)
                 
                 HStack{
                     Button("Great") {
@@ -55,7 +46,7 @@ struct ContentView: View {
             }
         }
     }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
