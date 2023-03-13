@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var messageString = "Namaste"
+    @State private var messageString = ""
     var body: some View {
             VStack{
                 Spacer()
@@ -29,16 +29,24 @@ struct ContentView: View {
                 HStack{
                     Button("Great") {
                         // this is the action performed when the button is pressed
-                        messageString = "You are Great!"
+                        let message1 = "You are Awesome!"
+                        let message2 = "You are Great!"
+                        if messageString == ""{
+                            messageString = message2
+                        }else if messageString == message2{
+                            messageString = message1
+                        }else if messageString == message1{
+                            messageString = message2
+                        }
                     }
                     .buttonStyle(.borderedProminent)
-                    Spacer()
-                    
-                    Button("Awesome") {
-                        // this is the action performed when the button is pressed
-                        messageString = "You are Awesome!"
-                    }
-                    .buttonStyle(.borderedProminent)
+//                    Spacer()
+//
+//                    Button("Awesome") {
+//                        // this is the action performed when the button is pressed
+//                        messageString = "You are Awesome!"
+//                    }
+//                    .buttonStyle(.borderedProminent)
                 }
                 //                .border(.purple, width: 5)
                 .padding()
