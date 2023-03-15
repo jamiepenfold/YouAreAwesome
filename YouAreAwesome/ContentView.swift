@@ -11,6 +11,7 @@ struct ContentView: View {
     @State private var messageString = ""
     @State private var imageName = ""
     @State private var imageNumber = 0
+    @State private var messageNumber = 0
     var body: some View {
             VStack{
                 
@@ -39,11 +40,13 @@ struct ContentView: View {
                 HStack{
                     Button("Show Message") {
                         // this is the action performed when the button is pressed
-                        let message1 = "You are Awesome!"
-                        let message2 = "You are Great!"
+                        let messages = ["You are Awesome!", "You are Great!", "You are Fantastic!", "Fabulous? That's You!", "You make me smile!", "When the Genius bar needs help, they call You!"]
                         
-                        messageString = (messageString == message1 ? message2 : message1)
-                        //imageName = (imageName == "image0" ? "image1" : "image0")
+                        messageString = messages[messageNumber]
+                        messageNumber += 1
+                        if messageNumber == messages.count{
+                            messageNumber = 0
+                        }
                         
                         if imageNumber == 9{
                             imageNumber = 0
