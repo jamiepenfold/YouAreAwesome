@@ -42,23 +42,10 @@ struct ContentView: View {
                         // this is the action performed when the button is pressed
                         let messages = ["You are Awesome!", "You are Great!", "You are Fantastic!", "Fabulous? That's You!", "You make me smile!", "When the Genius bar needs help, they call You!"]
                         
-                        messageString = messages[messageNumber]
-                        messageNumber += 1
-                        if messageNumber == messages.count{
-                            messageNumber = 0
-                        }
+                        messageString = messages[Int.random(in: 0...messages.count-1)]
                         
-                        if imageNumber == 9{
-                            imageNumber = 0
-                            imageName = "image\(imageNumber)"
-                        }else{
-                            imageNumber += 1
-                            imageName = "image\(imageNumber)"
-                        }
-                        print(imageNumber)
-                        print(imageName)
-                        
-//
+                        imageName = "image\(Int.random(in: 0...9))"
+                       
                     }
                     .buttonStyle(.borderedProminent)
 //                    Spacer()
